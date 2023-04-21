@@ -1,0 +1,13 @@
+<div class='container'>
+  <%= link_to 'Show all lists', lists_path, class: 'btn btn-warning'%>
+  <h1><%= @list.name %></h1>
+
+  <%# <button class='btn-warning'>Show all lists</button> %>
+
+  <%# link_to lists_path do %>
+    <%# <button class='btn btn-primary'>Show all lists</button> %>
+  <%# end %>
+
+  <%= link_to 'Add film to this list', bookmark_path, class: 'btn btn-warning'%>
+
+</div>

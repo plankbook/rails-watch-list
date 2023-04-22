@@ -1,11 +1,41 @@
-<div class='container'>
-  <h1>Movie lists</h1>
-    <div>
-      <%= link_to 'Create new list', lists_new_path %></li>
-      <p><% @lists.each do |list| %>
-        <li><%= link_to list.name, list_path(list) %></li>
-        <hr>
-        <% end %>
-      </p>
+
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/movie-60-165251.png" />
+</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href=<%= lists_path %>>All lists</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href=<%= lists_new_path %>>New list</a>
+          </li>
+      </ul>
     </div>
+  </div>
+</div>
+
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(http://www.tasteofcinema.com/wp-content/uploads/2017/06/1.jpg)">
+  Add movies to lists because why not
+</div>
+
+<div class='container'>
+  <div>
+    <%= link_to 'Create new list', lists_new_path %></li>
+    <div class="cards">
+      <% @lists.each do |list| %>
+        <%= link_to list_path(list) do %>
+          <div class="card-list" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://young-badlands-91008.herokuapp.com/assets/list_background-3189eb0e9160edcedd57c02014fc49c978ba6770f0dffcd32100d38aa6119b33.jpg)">
+            <%= list.name %>
+          </div>
+          <% end %>
+        <% end %>
+    </div>
+  </div>
 </div>

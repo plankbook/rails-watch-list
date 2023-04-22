@@ -1,6 +1,7 @@
 <div class='container'>
   <h1>Movie lists</h1>
     <div>
+      <%= link_to 'Create new list', lists_new_path %></li>
       <p><% @lists.each do |list| %>
         <li><%= link_to list.name, list_path(list) %></li>
         <hr>
